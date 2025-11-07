@@ -11,16 +11,15 @@ export default function RacesPage() {
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
       <h1 className="text-4xl font-bold text-center mb-8">Races</h1>
-      
+
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {raceList.map((race, index) => (
+        {raceList.map((race) => (
           <Link
-            key={index}
+            key={race.index}
             to="/class"
             className="block bg-white shadow-md rounded-xl p-6 hover:shadow-xl transition"
           >
             <h2 className="text-2xl font-semibold mb-2">{race.name}</h2>
-
             {race.details ? (
               <div className="text-sm text-gray-700 space-y-1">
                 <p><strong>Speed:</strong> {race.details.speed}</p>
@@ -33,6 +32,7 @@ export default function RacesPage() {
           </Link>
         ))}
       </div>
+
     </div>
   );
 }
