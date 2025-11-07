@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+Projet : Créateur de Personnages D&D
+Objectif
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Mon projet consiste à créer un site web pour aider les joueurs de Dungeons & Dragons (D&D) à concevoir leurs personnages.
+Le site affiche notamment les races et les classes, avec leurs descriptions et explications détaillées pour que les utilisateurs comprennent chaque choix.
 
-## Available Scripts
+Mon projet n’est pas encore terminé : je rencontre des difficultés pour mettre en place des blocs affichant plusieurs cartes (races/classes) sur une même ligne.
 
-In the project directory, you can run:
+Stack Technique
 
-### `npm start`
+Le site est conçu avec une stack moderne et modulable pour garantir une expérience utilisateur fluide et interactive.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+React.js
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Framework JavaScript pour construire des interfaces dynamiques et réactives.
 
-### `npm test`
+Permet de créer des composants réutilisables pour chaque étape de la création de personnage.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Facilite la mise à jour en temps réel des fiches de personnages.
 
-### `npm run build`
+JavaScript (ES6+)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Gère la logique de l’application, les interactions utilisateur et la manipulation des données du personnage.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+CSS Framework : Tailwind CSS
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Pour le design et la mise en page responsive.
 
-### `npm run eject`
+Classes utilitaires permettant un design personnalisé et léger, avec un contrôle fin sur chaque élément.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Installation et démarrage
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+git clone https://github.com/ton-username/ton-projet-dnd.git
+cd ton-projet-dnd
+npm install
+npm start
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Le site sera alors disponible sur http://localhost:3000
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+Architecture du projet
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+src/
+├─ components/       # Composants réutilisables (boutons, formulaires, cartes de personnage)
+├─ pages/            # Pages principales (Accueil, Création de personnage, Aperçu, etc.)
+├─ services/         # Gestion des appels API et logique métier
+├─ App.js            # Routeur principal et layout global
+└─ index.js          # Point d’entrée de l’application
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Endpoints API utilisés
 
-### Code Splitting
+Puisque le site est un créateur de personnage D&D, j’ai utilisé les endpoints suivants pour récupérer les données :
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+GET /api/2014/races/{index} → détails d’une race (exemple : dwarf)
 
-### Analyzing the Bundle Size
+GET /api/2014/classes/{index} → détails d’une classe
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Ces endpoints permettent de récupérer dynamiquement les informations nécessaires pour afficher les races et classes avec leurs descriptions.
