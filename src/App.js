@@ -1,22 +1,30 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import HomePage from "./pages/HomePage";
-import TailwindPage from "./pages/TailwindPage";
+import ClassPage from "./pages/ClassPage";
+import RacePage from "./pages/RacePage";
 
 export default function App() {
   return (
     <Router>
-      <nav className="p-4 bg-gray-100 flex justify-center space-x-8 shadow-md">
-        <Link to="/" className="text-gray-800 hover:text-blue-500 font-semibold">
-          Acceuil
+      <nav className="bg-black text-center flex flex-col md:flex-row gap-4 p-4">
+        <Link
+          to="/"
+          className="bg-gray-100 p-4 rounded-lg text-3xl font-semibold hover:bg-gray-200 transition"
+        >
+          Accueil
         </Link>
-        <Link to="/tailwind" className="text-gray-800 hover:text-blue-500 font-semibold">
-          Création Personnage
+        <Link
+          to="/race"
+          className="bg-gray-100 p-4 rounded-lg text-3xl font-semibold hover:bg-gray-200 transition"
+        >
+          Créer un Personnage
         </Link>
       </nav>
 
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/tailwind" element={<TailwindPage />} />
+        <Route path="/class" element={<ClassPage />} /> 
+        <Route path="/race" element={<RacePage />} />
       </Routes>
     </Router>
   );

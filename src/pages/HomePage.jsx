@@ -1,23 +1,15 @@
-import usePlayer from "../services/usePlayer";
-
-export default function TailwindPage() {
-  const player = usePlayer();
-
-  if (!player) return <p className="text-center mt-10">Chargement...</p>;
-
-  return (
-    <div
-      className="w-full h-screen bg-cover bg-center"
-      style={{
-        backgroundImage: "url('https://www.dndbeyond.com/content/1-1-96-0/skins/waterdeep/images/Waterdeep_opengraph.png')",
-      }}
-    >
-      {/* Contenu par-dessus le fond */}
-      <div className="flex items-center justify-center h-full">
-        <h1 className="text-white text-4xl font-bold bg-black/50 p-4 rounded">
-          Bienvenue dans D&D
-        </h1>
+export default function HomePage() {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-50 px-4">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/en/9/9a/Dungeons_%26_Dragons_5th_Edition_logo.svg"
+          alt="DND"
+          className="w-full sm:w-3/4 md:w-1/2 lg:w-1/3 mb-8 rounded-lg shadow-lg transition-transform hover:scale-105"
+        />
+        <p className="text-center text-lg sm:text-xl md:text-2xl lg:text-3xl text-cyan-600 font-semibold">
+          Crée ton héros et pars à l’aventure !
+        </p>
       </div>
-    </div>
-  );
-}
+    );
+  }
+  
